@@ -17,27 +17,15 @@
             integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
             crossorigin="anonymous"
     ></script>
-    <script>
-        function copyUID() {
-            const input = document.querySelector('#uid');
-            input.select();
-            document.execCommand("copy");
-            mdui.snackbar({
-                message: '已复制'
-            });
-        }
-    </script>
     <title>四史学习 UID</title>
 </head>
 <body class="mdui-theme-layout-auto mdui-theme-primary-indigo mdui-theme-accent-pink mdui-container mdui-typo">
 <h1 class="mdui-text-color-theme">获取 UID</h1>
-<div class="mdui-textfield">
-    <label class="mdui-textfield-label">UID</label>
-    <input id="uid" class="mdui-textfield-input" type="text" value="<?php
-    $data = json_decode($_GET['data'], true);
-    echo $data['_id'];
-?>"/>
-</div>
-<p><button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" onclick="copyUID()">复制</button></p>
+<p>
+    <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe12424c3b8aad5e6&redirect_uri=https://core.u.hep.com.cn/oauth/wechatmp/redirect&response_type=code&scope=snsapi_userinfo&state=5f582dd3683c2e0ae3aaacee-noguard-https://api.moeshin.com/univs_ssxx_uid/result.php/#wechat_redirect">微信中点击该链接</a>，或微信扫码：
+</p>
+<p>
+    <img src="qr.svg" style="width: 24em" alt="微信扫码">
+</p>
 </body>
 </html>
